@@ -116,6 +116,10 @@ app.get('/health', (req, res) => {
   });
 });
 
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'API is running successfully 🚀' });
+});
+
 // Handle 404 - Not Found
 app.all('*', (req, res, next) => {
   next(new ErrorResponse(`Can't find ${req.originalUrl} on this server!`, 404));
